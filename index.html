@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="en" data-theme="carlosDark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gidudu Samuel | Professional Portfolio</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23F86D09'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial, sans-serif' font-weight='bold'>GS</text></svg>"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "carlos-orange": "#F86D09",
+              "carlos-dark": "#08080D",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Professional Typography System */
+      body {
+        font-family: "Inter", sans-serif;
+        letter-spacing: -0.01em;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      /* Uniform Font Sizes */
+      h1 {
+        font-size: 48px;
+        line-height: 1.2;
+      }
+      h2 {
+        font-size: 36px;
+        line-height: 1.3;
+      }
+      h3 {
+        font-size: 30px;
+        line-height: 1.3;
+      }
+      h4 {
+        font-size: 24px;
+        line-height: 1.4;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      .text-lg {
+        font-size: 18px !important;
+      }
+      .text-sm {
+        font-size: 14px !important;
+      }
+      .text-xs {
+        font-size: 12px !important;
+      }
+
+      .btn {
+        font-size: 16px;
+      }
+      .btn-lg {
+        font-size: 18px;
+      }
+      .btn-sm {
+        font-size: 14px;
+      }
+
+      input,
+      textarea {
+        font-size: 16px;
+      }
+
+      .text-gradient {
+        background: linear-gradient(90deg, #f86d09, #efa649);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Broken Grid Effect for Profile Images */
+      .profile-container {
+        position: relative;
+        display: inline-block;
+      }
+
+      .profile-image {
+        position: relative;
+        z-index: 10;
+        border-radius: 0.5rem;
+        filter: grayscale(30%);
+        transition: filter 0.3s ease;
+      }
+
+      .profile-image:hover {
+        filter: grayscale(0%);
+      }
+
+      .profile-border {
+        position: absolute;
+        top: 15px;
+        right: -15px;
+        width: 100%;
+        height: 100%;
+        border: 2px solid #22c55e;
+        z-index: 1;
+        border-radius: 0.5rem;
+      }
+
+      /* Fade-in Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .fade-in {
+        animation: fadeIn 1s ease-in;
+      }
+
+      .fade-in-up {
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      .fade-in-delay-1 {
+        animation: fadeInUp 0.8s ease-out 0.2s both;
+      }
+
+      .fade-in-delay-2 {
+        animation: fadeInUp 0.8s ease-out 0.4s both;
+      }
+
+      .fade-in-delay-3 {
+        animation: fadeInUp 0.8s ease-out 0.6s both;
+      }
+
+      section {
+        animation: fadeIn 1s ease-in;
+      }
+    </style>
+  </head>
+  <body class="bg-base-100 text-base-content antialiased">
+    <nav
+      class="navbar bg-base-100/80 backdrop-blur-md px-8 py-4 sticky top-0 z-50 border-b border-white/5"
+    >
+      <div class="flex-1">
+        <a class="text-lg font-bold tracking-tight"
+          >GIDUDU <span class="text-carlos-orange">SAMUEL</span></a
+        >
+      </div>
+      <div class="hidden md:flex gap-6 items-center">
+        <a
+          href="#about"
+          class="text-sm font-medium text-gray-400 hover:text-white transition-colors"
+          >About</a
+        >
+        <a
+          href="#services"
+          class="text-sm font-medium text-gray-400 hover:text-white transition-colors"
+          >Services</a
+        >
+        <a
+          href="#blogs"
+          class="text-sm font-medium text-gray-400 hover:text-white transition-colors"
+          >Blogs</a
+        >
+        <a
+          href="#contact"
+          class="btn btn-primary btn-sm px-5 normal-case font-semibold"
+          >Get in Touch</a
+        >
+      </div>
+    </nav>
+
+    <section
+      id="home"
+      class="min-h-[80vh] flex items-center px-8 lg:px-16 max-w-7xl mx-auto py-20"
+    >
+      <div class="grid lg:grid-cols-2 gap-16 items-center w-full">
+        <div class="space-y-6 fade-in-up">
+          <div
+            class="inline-block px-3 py-1 rounded-full bg-carlos-orange/10 text-carlos-orange text-xs font-bold uppercase tracking-widest fade-in-delay-1"
+          >
+            Available for projects
+          </div>
+          <h1
+            class="text-4xl md:text-5xl font-bold leading-tight tracking-tight fade-in-delay-2"
+          >
+            Hi I'm <br />Samuel Gidudu, a
+            <span class="text-gradient">Professional Web Designer.</span>
+          </h1>
+          <p
+            class="text-gray-400 text-base md:text-lg max-w-lg leading-relaxed fade-in-delay-3"
+          >
+            I'm a passionate front-end developer creating responsive,
+            user-friendly websites and web applications for my Clients. Based in
+            kampala Uganda
+          </p>
+          <div class="flex gap-4 pt-4">
+            <a
+              href="./resume.pdf"
+              download
+              class="btn btn-primary px-8 normal-case"
+            >
+              Download Resume
+            </a>
+            <a
+              href="#contact"
+              class="btn btn-ghost border border-white/10 px-8 normal-case"
+            >
+              Get In Touch
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="relative max-w-md mx-auto lg:ml-auto profile-container"
+          data-aos="fade-up-right"
+        >
+          <img
+            src="./pics/DIV01891.jpg"
+            class="profile-image shadow-2xl"
+            alt="Professional Portrait"
+          />
+          <div class="profile-border"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-24 px-8 lg:px-16 max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-6">
+          <h3
+            class="text-3xl md:text-4xl font-bold leading-tight text-gray-300"
+          >
+            Professional Web Designer | Front-End Developer | Digital Creator
+          </h3>
+
+          <p class="text-gray-400 leading-relaxed">
+            I am a passionate front-end developer driven by a deep love for
+            creating responsive, user-friendly websites with over
+            <span class="text-white font-semibold">1+ years of experience</span
+            >. I leverage my expertise to build innovative digital solutions and
+            empower clients through exceptional web experiences.
+          </p>
+
+          <p class="text-gray-400 leading-relaxed">
+            During my time at campus, I joined Kanzu Code Foundation where I got
+            really fascinated about how websites work and the ability to solve
+            real-world problems with them. Learning and growing in web
+            development has been my thing from then onwards.
+          </p>
+
+          <div class="space-y-3">
+            <p class="text-gray-300 font-medium">
+              Here are a few technologies I have been working with recently:
+            </p>
+
+            <div class="grid grid-cols-2 gap-x-8 gap-y-2">
+              <div class="space-y-2">
+                <p class="text-gray-400 text-sm">• HTML & CSS</p>
+                <p class="text-gray-400 text-sm">• JavaScript (ES6+)</p>
+                <p class="text-gray-400 text-sm">• Tailwind CSS</p>
+                <p class="text-gray-400 text-sm">• WordPress</p>
+              </div>
+              <div class="space-y-2">
+                <p class="text-gray-400 text-sm">• Git & GitHub</p>
+                <p class="text-gray-400 text-sm">• Responsive Design</p>
+                <p class="text-gray-400 text-sm">• UI/UX Principles</p>
+                <p class="text-gray-400 text-sm">• Web Performance</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="relative max-w-md mx-auto lg:ml-auto profile-container"
+          data-aos="fade-left"
+        >
+          <img
+            src="./pics/_MCA7874.jpg"
+            class="profile-image shadow-2xl"
+            alt="Professional Portrait"
+          />
+          <div class="profile-border"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="py-24 px-10 bg-base-100 max-w-7xl mx-auto">
+      <div
+        class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4"
+      >
+        <div data-aos="fade-right">
+          <h2
+            class="text-primary font-bold tracking-widest text-sm mb-2 uppercase"
+          >
+            My Services
+          </h2>
+          <h3 class="text-5xl font-black tracking-tighter">
+            WHAT I DO<span class="text-primary">.</span>
+          </h3>
+        </div>
+        <p class="text-gray-500 max-w-xs" data-aos="fade-left">
+          Building responsive websites and crafting engaging content for modern
+          brands.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 border-t border-white/10">
+        <div
+          class="p-10 border-b border-white/10 md:border-r transition-all duration-300 hover:bg-white/[0.02] group"
+          data-aos="fade-up"
+        >
+          <div
+            class="w-12 h-12 mb-8 text-carlos-orange group-hover:scale-110 transition-transform"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"
+              />
+            </svg>
+          </div>
+          <h4 class="text-2xl font-bold mb-4">Web Development</h4>
+          <p class="text-gray-500 mb-6">
+            Building fast, responsive, and user-friendly websites using modern
+            technologies and best practices.
+          </p>
+          <ul class="text-sm space-y-2 text-gray-400">
+            <li>• HTML & CSS</li>
+            <li>• Tailwind CSS</li>
+            <li>• Vanilla JavaScript</li>
+            <li>• WordPress Development</li>
+            <li>• Responsive Design</li>
+          </ul>
+        </div>
+
+        <div
+          class="p-10 border-b border-white/10 transition-all duration-300 hover:bg-white/[0.02] group"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <div
+            class="w-12 h-12 mb-8 text-carlos-orange group-hover:scale-110 transition-transform"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+              />
+            </svg>
+          </div>
+          <h4 class="text-2xl font-bold mb-4">Blog Writing</h4>
+          <p class="text-gray-500 mb-6">
+            Creating compelling, SEO-optimized blog content that engages readers
+            and drives traffic to your website.
+          </p>
+          <ul class="text-sm space-y-2 text-gray-400">
+            <li>• SEO Blog Posts</li>
+            <li>• Content Strategy</li>
+            <li>• Article Writing</li>
+            <li>• Copywriting</li>
+            <li>• Content Editing</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="blogs" class="py-24 px-8 lg:px-16 max-w-7xl mx-auto">
+      <div class="mb-16">
+        <h2
+          class="text-sm font-bold text-carlos-orange uppercase tracking-widest mb-2"
+        >
+          Blog Posts
+        </h2>
+        <h3 class="text-3xl font-bold">Recent Articles</h3>
+      </div>
+
+      <div class="space-y-16">
+        <!-- Blog Post 1 -->
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div
+            class="relative overflow-hidden rounded-lg"
+            data-aos="fade-up-right"
+          >
+            <img
+              src="./pics/_MCA7947.jpg"
+              alt="Blog Post"
+              class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div class="space-y-4" data-aos="fade-up-left">
+            <span class="text-sm text-carlos-orange font-semibold">Medium</span>
+            <h4 class="text-2xl font-bold">
+              Graduation Day: Kanzu Code Foundation Tech Bootcamps — November 2,
+              2024
+            </h4>
+            <p class="text-gray-400">
+              Graduation Day: Kanzu Code Foundation Tech Bootcamps — November 2,
+              2024 An Incredible Weekend of Celebration and Achievement! On
+              November 2, 2024, the Kanzu Code Foundation celebrated the
+              graduation of its July–October 2024 Tech Bootcamp cohorts at the
+              Innovation Village, Ntinda Complex. It was an incredible weekend
+              full of excitement, inspiration, and well-deserved recognition for
+              all our students. Congratulations to the 35 talented graduates who
+              completed the intensive bootcamps and are now ready to make their
+              mark in the tech industry!
+            </p>
+            <a
+              href="https://medium.com/@samuelgidudu99/graduation-day-kanzu-code-foundation-tech-bootcamps-november-2-2024-4ff8d53510fc "
+              class="inline-flex items-center text-carlos-orange hover:underline font-medium"
+            >
+              Read More →
+            </a>
+          </div>
+        </div>
+
+        <!-- Blog Post 2 -->
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div
+            class="relative overflow-hidden rounded-lg"
+            data-aos="fade-up-right"
+          >
+            <img
+              src="./pics/photo_2026-03-01_18-36-39.jpg"
+              alt="Blog Post"
+              class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div class="space-y-4" data-aos="fade-up-left">
+            <span class="text-sm text-carlos-orange font-semibold"
+              >Medium Blog</span
+            >
+            <h4 class="text-2xl font-bold">
+              MY JOUNERY WITH KANZU CODE FOUNDATION: A MONTH OF LEARNING WEB
+              DEVELOPMENT
+            </h4>
+            <p class="text-gray-400">
+              I embarked my web development journey with kanzu code, a tech
+              training organization based in Uganda, with a mix of excitement
+              and curiosity. Having heard about how they equip students with
+              practical skills, I decided to dive in for a month-long course to
+              learn the ins and outs of web development. Now that the course has
+              come to an end, I’m looking back at the incredible experience, the
+              challenges, and growth I’ve achieved in such a short period.
+            </p>
+            <a
+              href="https://medium.com/@samuelgidudu99/my-journey-with-kanzu-code-a-month-of-learning-web-development-53e895879515"
+              class="inline-flex items-center text-carlos-orange hover:underline font-medium"
+            >
+              Read More →
+            </a>
+          </div>
+        </div>
+
+        <!-- Blog Post 3 -->
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div
+            class="relative overflow-hidden rounded-lg"
+            data-aos="fade-up-right"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1432821596592-e2c18b78144f?auto=format&fit=crop&w=800&q=80"
+              alt="Blog Post"
+              class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div class="space-y-4" data-aos="fade-up-left">
+            <span class="text-sm text-carlos-orange font-semibold"
+              >Meduim Blog</span
+            >
+            <h4 class="text-2xl font-bold">MY JOUNERY AS A WEB DEVELOPER:</h4>
+            <p class="text-gray-400">
+              Hello there🤗 welcome to my blog, am really thrilled to have you
+              here. Well my name is Gidudu Samuel and am a 20 -year-old student
+              pursuing a diploma in computer science at the Uganda institute of
+              information and communication technology (UICT) in Kampala.
+              Writing for SEO doesn't mean sacrificing quality. Discover how to
+              create engaging content that ranks well in search engines while
+              providing real value to your readers.
+            </p>
+            <a
+              href="https://medium.com/@samuelgidudu99/my-journey-as-a-software-developer-714add80660a"
+              class="inline-flex items-center text-carlos-orange hover:underline font-medium"
+            >
+              Read More →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-24 px-10">
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="bg-carlos-orange rounded-3xl p-8 md:p-12 text-center mb-16 relative overflow-hidden group"
+          data-aos="zoom-in"
+        >
+          <div
+            class="absolute -top-10 -left-10 w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:bg-white/20 transition-all"
+          ></div>
+
+          <h2
+            class="text-3xl md:text-4xl font-black text-white leading-tight mb-6"
+          >
+            HAVE A PROJECT IN MIND?<br />LET’S BUILD SOMETHING GREAT.
+          </h2>
+          <a
+            href="mailto:hello@carlos.com"
+            class="btn btn-lg bg-white border-none text-carlos-orange hover:bg-carlos-dark hover:text-white px-10 rounded-full font-bold transition-all"
+          >
+            Send Me An Email
+          </a>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-16">
+          <div data-aos="fade-right">
+            <h3 class="text-3xl font-bold mb-6">
+              SAY HELLO<span class="text-primary">!</span>
+            </h3>
+            <p class="text-gray-400 mb-8">
+              Whether you have a question or just want to discuss a potential
+              collaboration, my inbox is always open.
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-primary"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <span class="font-medium">samuelgidud99@gmail.com</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-primary"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                </div>
+                <span class="font-medium">kampala uganda</span>
+              </div>
+            </div>
+
+            <div class="flex gap-4 mt-8">
+              <a
+                href="https://www.linkedin.com/in/gidudu-samuel-william-0324aa32b?trk=contact-info"
+                target="_blank"
+                class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-carlos-orange hover:bg-carlos-orange hover:text-white transition-all"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/Gidudu-sam "
+                target="_blank"
+                class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-carlos-orange hover:bg-carlos-orange hover:text-white transition-all"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://instagram.com/yourprofile"
+                target="_blank"
+                class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-carlos-orange hover:bg-carlos-orange hover:text-white transition-all"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <form class="space-y-6" data-aos="fade-left">
+            <div class="grid md:grid-cols-2 gap-6">
+              <input
+                type="text"
+                placeholder="Full Name"
+                class="input input-bordered w-full bg-white/5 border-white/10 focus:border-primary focus:outline-none h-12"
+              />
+              <input
+                type="email"
+                placeholder="Email Address"
+                class="input input-bordered w-full bg-white/5 border-white/10 focus:border-primary focus:outline-none h-12"
+              />
+            </div>
+            <input
+              type="text"
+              placeholder="Subject"
+              class="input input-bordered w-full bg-white/5 border-white/10 focus:border-primary focus:outline-none h-12"
+            />
+            <textarea
+              placeholder="Your Message"
+              class="textarea textarea-bordered w-full bg-white/5 border-white/10 focus:border-primary focus:outline-none h-32"
+            ></textarea>
+            <button class="btn btn-primary w-full h-12 font-semibold">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-base-200/50 border-t border-white/5 py-12 px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-8 mb-8">
+          <div>
+            <h4 class="font-bold text-lg mb-4">
+              GIDUDU <span class="text-carlos-orange">SAMUEL</span>
+            </h4>
+            <p class="text-gray-400 text-sm">
+              Professional web developer and content writer creating digital
+              experiences that matter.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-carlos-orange transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-400 hover:text-carlos-orange transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#blogs"
+                  class="text-gray-400 hover:text-carlos-orange transition-colors"
+                  >Blogs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-400 hover:text-carlos-orange transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Connect</h4>
+            <div class="flex gap-3 mb-4">
+              <a
+                href="https://www.linkedin.com/in/gidudu-samuel-william-0324aa32b/"
+                target="_blank"
+                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-carlos-orange hover:bg-carlos-orange hover:text-white transition-all"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/yourusername"
+                target="_blank"
+                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-carlos-orange hover:bg-carlos-orange hover:text-white transition-all"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://instagram.com/yourprofile"
+                target="_blank"
+                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-carlos-orange hover:bg-carlos-orange hover:text-white transition-all"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+              </a>
+            </div>
+            <p class="text-gray-400 text-sm">samuelgidud99@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="border-t border-white/5 pt-8 text-center">
+          <p class="text-gray-400 text-sm">
+            &copy; 2025 Gidudu Samuel. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+      });
+    </script>
+  </body>
+</html>
