@@ -7,7 +7,7 @@
 
     <!-- Favicon -->
     <link
-      rel="icon"
+      rel="icon"https://github.com/Gidudu-sam/Personal-portifolio.git
       type="image/svg+xml"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23F86D09'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial, sans-serif' font-weight='bold'>GS</text></svg>"
     />
@@ -48,23 +48,24 @@
         letter-spacing: -0.01em;
         font-size: 16px;
         line-height: 1.6;
+        overflow-x: hidden;
       }
 
       /* Uniform Font Sizes */
       h1 {
-        font-size: 48px;
+        font-size: clamp(28px, 6vw, 48px);
         line-height: 1.2;
       }
       h2 {
-        font-size: 36px;
+        font-size: clamp(22px, 5vw, 36px);
         line-height: 1.3;
       }
       h3 {
-        font-size: 30px;
+        font-size: clamp(20px, 4vw, 30px);
         line-height: 1.3;
       }
       h4 {
-        font-size: 24px;
+        font-size: clamp(18px, 3.5vw, 24px);
         line-height: 1.4;
       }
 
@@ -133,6 +134,17 @@
         border-radius: 0.5rem;
       }
 
+      @media (max-width: 640px) {
+        .profile-border {
+          top: 8px;
+          right: -8px;
+        }
+        .profile-container {
+          max-width: 85%;
+          margin-right: 12px;
+        }
+      }
+
       /* Fade-in Animations */
       @keyframes fadeInUp {
         from {
@@ -181,99 +193,104 @@
   </head>
   <body class="bg-base-100 text-base-content antialiased">
     <nav
-      class="navbar bg-base-100/80 backdrop-blur-md px-8 py-4 sticky top-0 z-50 border-b border-white/5"
+      class="navbar bg-base-100/80 backdrop-blur-md px-6 py-4 sticky top-0 z-50 border-b border-white/5"
     >
       <div class="flex-1">
         <a class="text-lg font-bold tracking-tight"
           >GIDUDU <span class="text-carlos-orange">SAMUEL</span></a
         >
       </div>
+      <!-- Desktop nav -->
       <div class="hidden md:flex gap-6 items-center">
-        <a
-          href="#about"
-          class="text-sm font-medium text-gray-400 hover:text-white transition-colors"
-          >About</a
-        >
-        <a
-          href="#services"
-          class="text-sm font-medium text-gray-400 hover:text-white transition-colors"
-          >Services</a
-        >
-        <a
-          href="#blogs"
-          class="text-sm font-medium text-gray-400 hover:text-white transition-colors"
-          >Blogs</a
-        >
-        <a
-          href="#contact"
-          class="btn btn-primary btn-sm px-5 normal-case font-semibold"
-          >Get in Touch</a
-        >
+        <a href="#about" class="text-sm font-medium text-gray-400 hover:text-white transition-colors">About</a>
+        <a href="#services" class="text-sm font-medium text-gray-400 hover:text-white transition-colors">Services</a>
+        <a href="#blogs" class="text-sm font-medium text-gray-400 hover:text-white transition-colors">Blogs</a>
+        <a href="#contact" class="btn btn-primary btn-sm px-5 normal-case font-semibold">Get in Touch</a>
+      </div>
+      <!-- Mobile hamburger -->
+      <div class="md:hidden">
+        <button id="menu-btn" class="btn btn-ghost btn-sm" aria-label="Toggle menu">
+          <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
       </div>
     </nav>
+    <!-- Mobile menu dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-base-100/95 backdrop-blur-md border-b border-white/5 px-6 py-4 flex flex-col gap-4 sticky top-[72px] z-40">
+      <a href="#about" class="text-sm font-medium text-gray-400 hover:text-white transition-colors" onclick="closeMobileMenu()">About</a>
+      <a href="#services" class="text-sm font-medium text-gray-400 hover:text-white transition-colors" onclick="closeMobileMenu()">Services</a>
+      <a href="#blogs" class="text-sm font-medium text-gray-400 hover:text-white transition-colors" onclick="closeMobileMenu()">Blogs</a>
+      <a href="#contact" class="btn btn-primary btn-sm normal-case font-semibold w-fit" onclick="closeMobileMenu()">Get in Touch</a>
+    </div>
 
     <section
       id="home"
-      class="min-h-[80vh] flex items-center px-8 lg:px-16 max-w-7xl mx-auto py-20"
+      class="min-h-[80vh] flex items-center w-full px-4 sm:px-8 lg:px-16 py-12 sm:py-20"
     >
-      <div class="grid lg:grid-cols-2 gap-16 items-center w-full">
-        <div class="space-y-6 fade-in-up">
-          <div
-            class="inline-block px-3 py-1 rounded-full bg-carlos-orange/10 text-carlos-orange text-xs font-bold uppercase tracking-widest fade-in-delay-1"
-          >
-            Available for projects
-          </div>
-          <h1
-            class="text-4xl md:text-5xl font-bold leading-tight tracking-tight fade-in-delay-2"
-          >
-            Hi I'm <br />Samuel Gidudu, a
-            <span class="text-gradient">Professional Web Designer.</span>
-          </h1>
-          <p
-            class="text-gray-400 text-base md:text-lg max-w-lg leading-relaxed fade-in-delay-3"
-          >
-            I'm a passionate front-end developer creating responsive,
-            user-friendly websites and web applications for my Clients. Based in
-            kampala Uganda
-          </p>
-          <div class="flex gap-4 pt-4">
-            <a
-              href="./resume.pdf"
-              download
-              class="btn btn-primary px-8 normal-case"
+      <div class="max-w-7xl mx-auto w-full">
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full">
+          <div class="space-y-5 fade-in-up text-left">
+            <div
+              class="inline-block px-3 py-1 rounded-full bg-carlos-orange/10 text-carlos-orange text-xs font-bold uppercase tracking-widest fade-in-delay-1"
             >
-              Download Resume
-            </a>
-            <a
-              href="#contact"
-              class="btn btn-ghost border border-white/10 px-8 normal-case"
+              Available for projects
+            </div>
+            <h1
+              class="font-bold leading-tight tracking-tight fade-in-delay-2"
             >
-              Get In Touch
-            </a>
+              Hi I'm <br />Samuel Gidudu, a
+              <span class="text-gradient">Professional Web Designer.</span>
+            </h1>
+            <p
+              class="text-gray-400 text-base md:text-lg max-w-lg leading-relaxed fade-in-delay-3"
+            >
+              I'm a passionate front-end developer creating responsive,
+              user-friendly websites and web applications for my Clients. Based in
+              Kampala, Uganda.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-2">
+              <a
+                href="./resume.pdf"
+                download
+                class="btn btn-primary px-6 normal-case"
+              >
+                Download Resume
+              </a>
+              <a
+                href="#contact"
+                class="btn btn-ghost border border-white/10 px-6 normal-case"
+              >
+                Get In Touch
+              </a>
+            </div>
           </div>
-        </div>
 
-        <div
-          class="relative max-w-md mx-auto lg:ml-auto profile-container"
-          data-aos="fade-up-right"
-        >
-          <img
-            src="./pics/DIV01891.jpg"
-            class="profile-image shadow-2xl"
-            alt="Professional Portrait"
-          />
-          <div class="profile-border"></div>
+          <div
+            class="relative w-full max-w-xs sm:max-w-sm mx-auto lg:ml-auto profile-container mt-8 lg:mt-0"
+            data-aos="fade-up-right"
+          >
+            <img
+              src="./pics/DIV01891.jpg"
+              class="profile-image shadow-2xl w-full"
+              alt="Professional Portrait"
+            />
+            <div class="profile-border"></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="py-24 px-8 lg:px-16 max-w-7xl mx-auto">
+    <section id="about" class="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 max-w-7xl mx-auto">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div class="space-y-6">
           <h3
             class="text-3xl md:text-4xl font-bold leading-tight text-gray-300"
           >
-            Professional Web Designer | Front-End Developer | Digital Creator
+            Professional Web Designer | Front-End Developer | Blog Writer
           </h3>
 
           <p class="text-gray-400 leading-relaxed">
@@ -327,7 +344,7 @@
       </div>
     </section>
 
-    <section id="services" class="py-24 px-10 bg-base-100 max-w-7xl mx-auto">
+    <section id="services" class="py-16 sm:py-24 px-4 sm:px-10 bg-base-100 max-w-7xl mx-auto">
       <div
         class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4"
       >
@@ -421,7 +438,7 @@
       </div>
     </section>
 
-    <section id="blogs" class="py-24 px-8 lg:px-16 max-w-7xl mx-auto">
+    <section id="blogs" class="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 max-w-7xl mx-auto">
       <div class="mb-16">
         <h2
           class="text-sm font-bold text-carlos-orange uppercase tracking-widest mb-2"
@@ -545,7 +562,7 @@
       </div>
     </section>
 
-    <section id="contact" class="py-24 px-10">
+    <section id="contact" class="py-16 sm:py-24 px-4 sm:px-10">
       <div class="max-w-7xl mx-auto">
         <div
           class="bg-carlos-orange rounded-3xl p-8 md:p-12 text-center mb-16 relative overflow-hidden group"
@@ -561,7 +578,7 @@
             HAVE A PROJECT IN MIND?<br />LET’S BUILD SOMETHING GREAT.
           </h2>
           <a
-            href="mailto:hello@carlos.com"
+            href="mailto:samuelgidudu99@gmail.com"
             class="btn btn-lg bg-white border-none text-carlos-orange hover:bg-carlos-dark hover:text-white px-10 rounded-full font-bold transition-all"
           >
             Send Me An Email
@@ -829,6 +846,22 @@
         duration: 1000,
         once: true,
         offset: 100,
+      });
+    </script>
+    <script>
+      function closeMobileMenu() {
+        document.getElementById('mobile-menu').classList.add('hidden');
+        document.getElementById('icon-open').classList.remove('hidden');
+        document.getElementById('icon-close').classList.add('hidden');
+      }
+
+      document.getElementById('menu-btn').addEventListener('click', function () {
+        const menu = document.getElementById('mobile-menu');
+        const iconOpen = document.getElementById('icon-open');
+        const iconClose = document.getElementById('icon-close');
+        menu.classList.toggle('hidden');
+        iconOpen.classList.toggle('hidden');
+        iconClose.classList.toggle('hidden');
       });
     </script>
   </body>
